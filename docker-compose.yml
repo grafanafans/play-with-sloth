@@ -26,6 +26,7 @@ services:
     volumes:
       - ./config/prometheus.yaml:/etc/prometheus/prometheus.yml
       - ./config/rules:/etc/prometheus/rules
+      - prometheus:/prometheus
     ports:
       - 9090:9090
       
@@ -33,3 +34,6 @@ services:
     image: songjiayang/sloth-myservice:0.0.1
     ports:
       - 8080:8080
+volumes:
+  prometheus:
+
