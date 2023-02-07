@@ -1,4 +1,4 @@
-module github.com/songjiayang/exemplar-demo
+module github.com/grafanafans/play-with-sloth
 
 go 1.18
 
