@@ -9,8 +9,6 @@ An example with sloth cli generate and dashboard.
 ```bash
 git clone git@github.com:grafanafans/play-with-sloth.git
 cd play-with-sloth
-go mod vendor
-make build
 ```
 
 2. generate rules with `sloth generate` command
