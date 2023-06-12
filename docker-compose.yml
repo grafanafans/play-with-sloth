@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   grafana:
-    image: grafana/grafana:9.1.5
+    image: grafana/grafana:9.5.3
     pull_policy: always
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true
@@ -19,10 +19,11 @@ services:
     image: prom/prometheus:latest
     command:
       - --config.file=/etc/prometheus/prometheus.yml
-      - --log.level=error
+      - --log.level=info
       - --storage.tsdb.path=/prometheus
       - --web.console.libraries=/usr/share/prometheus/console_libraries
       - --web.console.templates=/usr/share/prometheus/consoles
+      - --web.enable-lifecycle
     volumes:
       - ./config/prometheus.yaml:/etc/prometheus/prometheus.yml
       - ./config/rules:/etc/prometheus/rules
